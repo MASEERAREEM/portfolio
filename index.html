@@ -23,9 +23,9 @@
 
 <!-- Navbar -->
 <nav class="w-full py-6">
-  <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
+  <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row gap-4 md:gap-0 justify-between items-center">
     <h1 class="logo text-2xl font-semibold">Maseera Reem</h1>
-    <ul class="flex gap-8 text-m text-slate-300">
+    <ul class="flex gap-6 text-sm md:text-base text-slate-300">
       <li><a href="#home" class="hover:text-white">Home</a></li>
       <li><a href="#about" class="hover:text-white">About</a></li>
       <li><a href="#projects" class="hover:text-white">Projects</a></li>
@@ -35,19 +35,19 @@
 </nav>
 
 <!-- Hero -->
-<section id="home" class="max-w-7xl mx-auto px-6 py-20 grid md:grid-cols-2 gap-16 items-center">
+<section id="home" class="max-w-7xl mx-auto px-6 py-16 md:py-20 grid md:grid-cols-2 gap-14 items-center text-center md:text-left">
 
   <!-- Left -->
   <div>
-    <p class="text-slate-400 mb-4">Hello.</p>
-    <h2 class="text-4xl md:text-5xl font-bold leading-tight mb-6">
-      I’m <span class="text-indigo-400">Maseera Reem</span><br />
+    <p class="text-slate-400 mb-3">Hello.</p>
+    <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-6">
+      I’m <span class="text-indigo-400">Maseera Reem</span>
     </h2>
-    <p class="text-slate-400 mb-8 max-w-md">
+    <p class="text-slate-400 mb-8 max-w-md mx-auto md:mx-0">
       I design and develop clean, modern, and user-friendly web applications
       with a focus on clarity and performance.
     </p>
-    <div class="flex gap-4">
+    <div class="flex flex-col sm:flex-row justify-center md:justify-start gap-4">
       <a href="#projects"
          class="px-6 py-3 bg-indigo-500 rounded-lg hover:bg-indigo-600 transition">
         View Projects
@@ -59,29 +59,31 @@
     </div>
   </div>
 
-  <!-- Right (Profile Card) -->
+  <!-- Right -->
   <div class="relative flex justify-center">
-    <div class="bg-[#141926] rounded-full p-6 shadow-xl ">
-      <img class="w-[300px]  rounded-full" src="https://static.vecteezy.com/system/resources/previews/010/595/807/non_2x/young-muslim-woman-in-hijab-working-on-laptop-while-writing-plan-illustration-free-download-free-vector.jpg"
-           alt="Profile"
-           class="rounded-xl mx-auto" />
+    <div class="bg-[#141926] rounded-full p-5 sm:p-6 shadow-xl">
+      <img
+        src="https://static.vecteezy.com/system/resources/previews/010/595/807/non_2x/young-muslim-woman-in-hijab-working-on-laptop-while-writing-plan-illustration-free-download-free-vector.jpg"
+        alt="Profile"
+        class="w-[220px] sm:w-[260px] md:w-[300px] rounded-full"
+      />
     </div>
   </div>
 
 </section>
 
 <!-- About -->
-<section id="about" class="max-w-7xl mx-auto px-6 py-20">
-  <h3 class="text-3xl font-bold mb-10">About Me</h3>
+<section id="about" class="max-w-7xl mx-auto px-6 py-16 md:py-20">
+  <h3 class="text-2xl md:text-3xl font-bold mb-10 text-center md:text-left">About Me</h3>
 
-  <div class="grid md:grid-cols-2 gap-12">
-    <p class="text-slate-400 leading-relaxed">
+  <div class="grid md:grid-cols-2 gap-10">
+    <p class="text-slate-400 leading-relaxed text-center md:text-left">
       I am a passionate computer science student and aspiring software developer
       who enjoys building interactive, responsive, and meaningful digital
       experiences. I focus on writing clean code and continuously improving my skills.
     </p>
 
-    <div class="grid grid-cols-3 gap-6 text-center">
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 text-center">
       <div class="bg-[#141926] rounded-xl p-6">
         <h4 class="text-2xl font-bold text-indigo-400">120+</h4>
         <p class="text-sm text-slate-400">Hours Coding</p>
@@ -99,11 +101,12 @@
 </section>
 
 <!-- Projects -->
-<section id="projects" class="bg-[#141926] py-20">
+<section id="projects" class="bg-[#141926] py-16 md:py-20">
   <div class="max-w-7xl mx-auto px-6">
-    <h3 class="text-3xl font-bold mb-12">Projects</h3>
+    <h3 class="text-2xl md:text-3xl font-bold mb-12 text-center md:text-left">Projects</h3>
 
-    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+     
 
       <!-- 1 -->
        <a href="project1.html" class="group bg-[#0e121b] backdrop-blur p-6 rounded-xl border border-white/10 hover:border-indigo-400 transition">
@@ -183,13 +186,14 @@
         </p>
       </a>
 
+   
     </div>
   </div>
 </section>
 
 <!-- Contact -->
-<section id="contact" class="max-w-7xl mx-auto px-6 py-20 text-center">
-  <h3 class="text-3xl font-bold mb-6">Contact</h3>
+<section id="contact" class="max-w-7xl mx-auto px-6 py-16 md:py-20 text-center">
+  <h3 class="text-2xl md:text-3xl font-bold mb-6">Contact</h3>
   <p class="text-slate-400">📧 maseerareem@gmail.com</p>
   <p class="text-slate-400">GitHub & LinkedIn: Maseera Reem</p>
 </section>
