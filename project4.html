@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Calculator</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="min-h-screen flex items-center justify-center bg-slate-900">
+
+  <div class="bg-slate-800 rounded-2xl p-5 w-[340px]">
+
+    <!-- Output -->
+    <div class="output w-full h-20 bg-black rounded-lg mb-4 flex items-center justify-end px-4 text-2xl font-mono text-white">
+    </div>
+
+    <!-- Buttons -->
+    <div class="numbers grid grid-cols-4 gap-3">
+
+      <!-- Control -->
+      <input class="btn bg-red-500 hover:bg-red-600" type="button" value="C">
+      <input class="btn bg-slate-600" type="button" value="()">
+      <input class="btn bg-slate-600" type="button" value="%">
+      <input class="btn bg-orange-500 hover:bg-orange-600" type="button" value="/">
+
+      <!-- Numbers -->
+      <input class="btn bg-slate-700" type="button" value="7">
+      <input class="btn bg-slate-700" type="button" value="8">
+      <input class="btn bg-slate-700" type="button" value="9">
+      <input class="btn bg-orange-500 hover:bg-orange-600" type="button" value="*">
+
+      <input class="btn bg-slate-700" type="button" value="4">
+      <input class="btn bg-slate-700" type="button" value="5">
+      <input class="btn bg-slate-700" type="button" value="6">
+      <input class="btn bg-orange-500 hover:bg-orange-600" type="button" value="-">
+
+      <input class="btn bg-slate-700" type="button" value="1">
+      <input class="btn bg-slate-700" type="button" value="2">
+      <input class="btn bg-slate-700" type="button" value="3">
+      <input class="btn bg-orange-500 hover:bg-orange-600" type="button" value="+">
+
+      <input class="btn bg-slate-700 col-span-2" type="button" value="0">
+      <input class="btn bg-slate-700" type="button" value=".">
+      <input class="btn bg-green-500 hover:bg-green-600" type="button" value="=">
+
+    </div>
+  </div>
+
+  <!-- SAME JS -->
+  <script>
+    let total = 0
+    let given = ""
+    const inp = document.querySelectorAll('input')
+    const operators = ['+', '-', '*', '/']
+
+    inp.forEach(inp => {
+      inp.addEventListener('click', (e) => {
+        if (e.target.value == '=') {
+          total = eval(given)
+          given = total.toString()
+          document.querySelector('.output').textContent = total
+        }
+        else if (e.target.value == 'C') {
+          given = ''
+          document.querySelector('.output').textContent = given
+          return
+        }
+        else {
+          if (operators.includes(e.target.value) && operators.includes(given.slice(-1))) {
+            return
+          } else {
+            given = given + e.target.value
+            document.querySelector('.output').textContent = given
+          }
+        }
+      })
+    })
+  </script>
+
+  <style>
+    .btn {
+      @apply h-16 rounded-full text-white text-lg font-medium transition active:scale-95;
+    }
+  </style>
+
+</body>
+</html>

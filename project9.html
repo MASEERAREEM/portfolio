@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Registration</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body class="min-h-screen flex items-center justify-center bg-gradient-to-br from-indigo-600 via-cyan-500 to-emerald-400 px-4">
+
+  <div class="w-full max-w-md">
+
+    <h1 class="text-4xl font-bold text-center text-white mb-8 drop-shadow-lg">
+      Create Account
+    </h1>
+
+    <form class="flex flex-col gap-4 bg-white/15 backdrop-blur-xl text-white rounded-3xl px-8 py-10 shadow-2xl border border-white/20">
+
+      <!-- Email -->
+      <div class="flex flex-col gap-1">
+        <label for="email" class="text-sm">E-mail</label>
+        <input type="email" id="email" required
+          class="h-12 rounded-xl px-4 text-black focus:outline-none focus:ring-2 focus:ring-cyan-400 bg-white">
+      </div>
+
+      <!-- Phone -->
+      <div class="flex flex-col gap-1">
+        <label for="phone" class="text-sm">Phone</label>
+        <input type="number" id="phone" required
+          class="h-12 rounded-xl px-4 text-black focus:outline-none focus:ring-2 focus:ring-cyan-400 bg-white">
+      </div>
+
+      <!-- Password -->
+      <div class="flex flex-col gap-1">
+        <label for="password" class="text-sm">Password</label>
+        <div class="flex items-center bg-white rounded-xl px-4">
+          <input class="flex-1 h-12 text-black focus:outline-none" type="password" id="password" required>
+          <button class="eye text-xl text-gray-600" type="button">👁️</button>
+        </div>
+      </div>
+
+      <!-- Confirm Password -->
+      <div class="flex flex-col gap-1">
+        <label for="password2" class="text-sm">Confirm Password</label>
+        <div class="flex items-center bg-white rounded-xl px-4">
+          <input class="flex-1 h-12 text-black focus:outline-none" type="password" id="password2" required>
+          <button class="eye2 text-xl text-gray-600" type="button">👁️</button>
+        </div>
+      </div>
+
+      <!-- Captcha -->
+      <div class="cap bg-black/70 text-white rounded-xl py-3 text-center font-mono tracking-widest text-lg select-none"></div>
+
+      <input
+        class="cpt h-12 rounded-xl px-4 text-black focus:outline-none focus:ring-2 focus:ring-cyan-400 bg-white"
+        type="text"
+        placeholder="Enter captcha">
+
+      <!-- Submit -->
+      <button
+        class="button bg-cyan-400 mt-2 py-3 rounded-2xl text-black font-bold tracking-wide hover:bg-cyan-300 transition disabled:opacity-50 disabled:cursor-not-allowed"
+        disabled>
+        Register
+      </button>
+
+    </form>
+
+  </div>
+
+</body>
+
+<!-- 🔒 SAME JS (UNCHANGED) -->
+<script>
+  let pass=''
+  let pass2=''
+  let user_cpt=''
+
+  document.querySelector('.cpt').addEventListener('change',(e)=>{
+    user_cpt=e.target.value
+    if(pass==pass2 && captcha==user_cpt){
+      document.querySelector('.button').disabled=false
+    }
+    if(captcha!=user_cpt){
+      alert('mismatch captcha')
+    }
+  })
+
+  let captcha=Math.random().toString(36).substring(2,10)
+  document.querySelector('.cap').innerText=captcha
+
+  document.querySelector('#password').addEventListener('change',(e)=>{
+    pass=e.target.value
+  })
+
+  document.querySelector('#password2').addEventListener('change',(a)=>{
+    pass2 = a.target.value
+    if(pass2!=pass){
+      alert('mismatch password')
+    }
+  })
+
+  document.querySelector('.eye').addEventListener('click',()=>{
+    document.querySelector('#password').type="text"
+  })
+
+  document.querySelector('.eye2').addEventListener('click',()=>{
+    document.querySelector('#password2').type="text"
+  })
+</script>
+
+</html>

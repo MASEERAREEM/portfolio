@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carousel</title>
+
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Grechen+Fuemen&display=swap" rel="stylesheet">
+
+  <style>
+    .heading {
+      font-family: "Grechen Fuemen", cursive;
+    }
+  </style>
+</head>
+
+<body class="min-h-screen flex flex-col items-center justify-center bg-[#fdf6ec] gap-8">
+
+  <!-- Heading -->
+  <p class="heading text-4xl text-[#5a3e2b]">
+    what do you like to have?
+  </p>
+
+  <!-- Image Container -->
+  <div class="main bg-white p-4 rounded-3xl shadow-lg">
+    <img 
+      class="h-[70vh] w-[28vw] object-cover rounded-2xl border-4 border-[#f3e1c7]" 
+      src="https://mir-s3-cdn-cf.behance.net/project_modules/hd/0eb50b105486715.5f7a982bee771.png" 
+      alt=""
+    >
+  </div>
+
+  <script>
+    let index = 0
+    let images = [
+      "https://www.pepperdelight.com/wp-content/uploads/2021/04/pepper-delight-buttermilk-pancakes-1-scaled.jpg",
+      "https://cdn.britannica.com/98/235798-050-3C3BA15D/Hamburger-and-french-fries-paper-box.jpg",
+      "https://i.pinimg.com/736x/07/37/1a/07371a5299ecdc51bbb2dfff5b59ba47.jpg",
+      "https://lemonsandzest.com/wp-content/uploads/2020/12/Creamy-One-Pot-Pasta-6.9.jpg",
+      "https://www.kitchensanctuary.com/wp-content/uploads/2024/03/Stir-Fried-Noodles-with-Beansprouts-square-FS-500x500.jpg"
+    ]
+
+    function carousel() {
+      document.querySelector('img').setAttribute('src', images[index])
+      if (index < images.length - 1) {
+        index = index + 1
+      } else {
+        index = 0
+      }
+    }
+
+    setInterval(carousel, 2000)
+  </script>
+
+</body>
+</html>
